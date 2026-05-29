@@ -28,7 +28,6 @@ def plotting(graph, data, ticker):
         plt.title(f"{ticker} Correlation Heatmap")
 
     else:
-
         plt.boxplot(data['Close'])
         plt.title(f"{ticker} Closing Price Distribution")
         plt.ylabel("Price")
