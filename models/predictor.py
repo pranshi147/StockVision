@@ -1,6 +1,7 @@
 from sklearn.linear_model import LinearRegression
 from sklearn.model_selection import train_test_split
 
+#Prediction model made using Linear Regression
 def trainer(data):
     x=data[["Open", "High", "Low", "Volume"]]
     y=data[["Close"]]

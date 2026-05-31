@@ -1,6 +1,7 @@
 import matplotlib.pyplot as plt
 import seaborn as sns
 
+#Function to display graphs based on the user input
 def plotting(graph, data, ticker):
 
     fig=plt.figure(figsize=(12, 5))

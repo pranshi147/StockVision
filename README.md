@@ -8,8 +8,11 @@ The project combines financial analytics, data visualization, and predictive mod
 
 ## 🚀 Features
 ![Screenshot 1](assets/ss1.png)
+
 ![Screenshot 2](assets/ss2.png)
+
 ![Screenshot 3](assets/ss3.png)
+
 ![Screenshot 4](assets/ss4.png)
 
 ### 📊 Stock Analysis Dashboard

@@ -1,5 +1,6 @@
 import matplotlib.pyplot as plt
 
+#Function to plot graph to show the comparison between two stocks
 def compare(stocks):
     fig, ax = plt.subplots(figsize=(12, 5))
 
