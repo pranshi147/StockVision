@@ -5,6 +5,9 @@ from utils.data_loader import multiple_data
 from utils.plots import plotting
 from data.intro import showIntro
 from utils.comparison import compare
+from models.predictor import trainer
+import matplotlib.pyplot as plt
+
 
 st.set_page_config(
     page_title="Stock Vision",
@@ -12,7 +15,7 @@ st.set_page_config(
     layout="wide"
 )
 
-tab1, tab2= st.tabs(["Stock Analysis", "Stock Comparison"])
+tab1, tab2, tab3= st.tabs(["Stock Analysis", "Stock Comparison", "Prediction"])
 with tab1:
     st.sidebar.image("assets\elongated.png", width="stretch")
     st.title("Stock Vision")
@@ -62,3 +65,25 @@ with tab2:
         fig = compare(stocks)
         st.pyplot(fig)
             
+with tab3:
+    st.title("Stock Vision")
+    st.sidebar.title("Stock Vision Prediction")
+    
+    option2 = st.sidebar.selectbox("Select Stock",("AAPL", "TSLA", "MSFT", "NVDA", "GOOGL"), key="3")
+    start2 = st.sidebar.date_input("Start Date",pd.to_datetime("2024-01-01"), key="3.1")
+    end2 = st.sidebar.date_input("End Date",pd.to_datetime("today"), key="3.2")
+
+    data2= load_data(option2, start2, end2)
+
+    if st.sidebar.button("Show"):
+        reg, testx, testy= trainer(data2)
+        predict= reg.predict(testx)
+
+        fig, ax = plt.subplots()
+        ax.plot(testy.values.flatten(), label="Actual Data")
+        ax.plot(predict.flatten(), label="Predicted Data", linestyle="--")
+        ax.set_title(f"Prediction of {option2}")
+        ax.legend()
+        st.pyplot(fig)
+
+    
