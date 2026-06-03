@@ -150,10 +150,15 @@ Key steps include:
 ## 📸 Screenshots
 
 ![Screenshot 1](assets/ss1.png)
+<br>
 ![Screenshot 2](assets/ss2.png)
+<br>
 ![Screenshot 3](assets/ss3.png)
+<br>
 ![Screenshot 4](assets/ss4.png)
+<br>
 ![Screenshot 5](assets/ss5.png)
+<br>
 ![Screenshot 6](assets/ss6.png)
 
 ---
