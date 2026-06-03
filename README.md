@@ -1,55 +1,43 @@
 # 📈 StockVision
 
-StockVision is an interactive stock market analytics and prediction dashboard that enables users to explore stock trends, compare multiple stocks, visualize financial data, and generate machine learning-based stock price predictions through an intuitive interface.
+StockVision is an interactive stock market analytics dashboard built with Streamlit that enables users to explore, compare, and forecast stock market performance through data visualization and machine learning.
 
-The project combines financial analytics, data visualization, and predictive modeling to help users better understand stock market behavior using real-world market data.
+The application provides a clean and intuitive interface for analyzing historical stock data, comparing multiple stocks, and generating future (5 days) stock price predictions using predictive modeling techniques.
 
 ---
 
 ## 🚀 Features
-![Screenshot 1](assets/ss1.png)
 
-![Screenshot 2](assets/ss2.png)
+### 📊 Stock Analysis
 
-![Screenshot 3](assets/ss3.png)
+* Explore historical stock market data.
+* Visualize stock performance using interactive charts.
+* Analyze key metrics such as:
 
-![Screenshot 4](assets/ss4.png)
-
-### 📊 Stock Analysis Dashboard
-
-* Analyze individual stocks using historical market data
-* Interactive date range selection
-* Multiple visualization options:
+  * Current Price
+  * Highest Price
+  * Lowest Price
+  * Average Trading Volume
+* View market trends through multiple visualizations:
 
   * Line Charts
   * Bar Charts
+  * Heatmaps
   * Boxplots
-  * Correlation Heatmaps
-* Dark themed analytics dashboard
 
-### 📈 Key Performance Indicators (KPIs)
+### 📈 Stock Comparison
 
-* Current Stock Price
-* Highest Price
-* Lowest Price
-* Average Trading Volume
+* Compare multiple stocks simultaneously.
+* Analyze relative performance over custom date ranges.
+* Visualize comparative trends and market behavior.
+* Identify patterns, similarities, and differences across selected stocks.
 
-### 🔍 Multi-Stock Comparison
+### 🤖 Stock Prediction
 
-* Compare multiple stocks simultaneously
-* Visual comparison of stock performance
-* Trend analysis across different companies
-
-### 🤖 Machine Learning Prediction
-
-* Stock price prediction using Linear Regression
-* Actual vs Predicted stock price visualization
-* Historical trend-based forecasting
-
-### 📥 Data Export
-
-* Download analyzed stock data as CSV files
-* Easy access for further analysis and research
+* Forecast future stock prices using Machine Learning.
+* Utilize historical closing prices as predictive features.
+* Generate future price forecasts and trend visualizations.
+* Explore expected market movements through data-driven predictions.
 
 ---
 
@@ -61,8 +49,8 @@ The project combines financial analytics, data visualization, and predictive mod
 * NumPy
 * Matplotlib
 * Seaborn
-* Scikit-Learn
-* Yahoo Finance API (yfinance)
+* Scikit-learn
+* yFinance
 
 ---
 
@@ -71,133 +59,104 @@ The project combines financial analytics, data visualization, and predictive mod
 ```text
 StockVision/
 │
-├── app.py
+├── assets/                 # Images and project assets
+├── data/                   # Page content and descriptions
+├── models/                 # Machine learning models
+├── utils/                  # Utility functions
+├── .streamlit/             # Streamlit configuration
 │
-├── assets/
-│   ├── logo.png
-│   └── elongated.png
-│
-├── data/
-│   └── intro.py
-│
-├── models/
-│   └── predictor.py
-│
-├── utils/
-│   ├── data_loader.py
-│   ├── plots.py
-│   └── comparison.py
-│
-├── requirements.txt
-└── README.md
+├── app.py                  # Main Streamlit application
+├── requirements.txt        # Project dependencies
+├── README.md               # Project documentation
+└── .gitignore              # Ignored files and folders
 ```
 
 ---
 
-## 📷 Dashboard Modules
+## ⚙️ Installation
 
-### Stock Analysis
-
-Analyze historical stock data with multiple chart types and financial metrics.
-
-### Stock Comparison
-
-Compare multiple stocks on a single visualization to identify performance trends and market behavior.
-
-### Prediction Module
-
-Generate stock price predictions using machine learning and compare predicted values with actual market data.
-
----
-
-## 📈 Machine Learning Workflow
-
-The prediction system follows a supervised machine learning approach:
-
-1. Historical stock data is collected.
-
-2. Features such as:
-
-   * Open
-   * High
-   * Low
-   * Volume
-
-   are used as inputs.
-
-3. Closing Price is used as the target variable.
-
-4. A Linear Regression model is trained on historical market data.
-
-5. Predictions are generated and visualized against actual stock prices.
-
----
-
-## 🎯 Learning Outcomes
-
-This project demonstrates practical applications of:
-
-* Financial Data Analysis
-* Data Visualization
-* Machine Learning
-* Time-Series Exploration
-* Dashboard Development
-* Data Processing and Feature Engineering
-
----
-
-## ▶️ Installation
-
-Clone the repository:
+### Clone the Repository
 
 ```bash
 git clone https://github.com/pranshi147/StockVision.git
-```
-
-Move into the project directory:
-
-```bash
 cd StockVision
 ```
 
-Create a virtual environment:
+### Create Virtual Environment
 
 ```bash
 python -m venv venv
 ```
 
-Activate the virtual environment:
+### Activate Virtual Environment
 
-### Windows
+#### Windows
 
 ```bash
 venv\Scripts\activate
 ```
 
-Install dependencies:
+#### macOS/Linux
+
+```bash
+source venv/bin/activate
+```
+
+### Install Dependencies
 
 ```bash
 pip install -r requirements.txt
 ```
 
-Run the application:
+---
+
+## ▶️ Run the Application
 
 ```bash
 streamlit run app.py
 ```
 
+The application will open in your browser at:
+
+```text
+http://localhost:8501
+```
+
 ---
 
-## 🔮 Future Improvements
+## 📊 Machine Learning Approach
 
-* Moving Average Indicators
-* RSI and MACD Analysis
-* Candlestick Charts
-* Random Forest Regression
-* LSTM-based Forecasting
-* Real-Time Market News Integration
-* Sentiment Analysis
-* Portfolio Optimization Tools
+The prediction module uses historical stock closing prices to generate future forecasts.
+
+Key steps include:
+
+1. Collect historical stock data using yFinance.
+2. Create lag features from previous closing prices.
+3. Train a regression model on historical trends.
+4. Generate future stock price forecasts.
+5. Visualize predicted market movements.
+
+---
+
+## 🎯 Project Objectives
+
+* Simplify stock market analysis through visualization.
+* Enable users to compare multiple stocks efficiently.
+* Demonstrate practical applications of Machine Learning in finance.
+* Provide an accessible and user-friendly analytics dashboard.
+
+---
+
+## 📸 Screenshots
+
+Add screenshots of:
+
+![Screenshot 1]("assets/ss1.png)
+![Screenshot 2]("assets/ss2.png)
+![Screenshot 3]("assets/ss3.png)
+![Screenshot 4]("assets/ss4.png)
+![Screenshot 5]("assets/ss5.png)
+![Screenshot 6]("assets/ss6.png)
 
 ---
 
@@ -206,8 +165,6 @@ streamlit run app.py
 **Pranshi Mittal**
 
 GitHub: https://github.com/pranshi147
-
----
 
 ## ⭐ Support
 
