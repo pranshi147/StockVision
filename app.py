@@ -23,7 +23,7 @@ tab1, tab2, tab3= st.tabs(["Stock Analysis", "Stock Comparison", "Prediction"])
 
 #Stock Analysis
 with tab1:
-    st.sidebar.image("assets\elongated.png", width="stretch")
+    st.sidebar.image("assets/elongated.png", use_container_width=True)
     st.title("Stock Vision")
     st.sidebar.title("Stock Vision Analysis")
 
