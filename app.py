@@ -33,7 +33,7 @@ with tab1:
     end= st.sidebar.date_input("End Date",pd.to_datetime("today"), key="1.2")
     graph= st.sidebar.selectbox("Select Graph",("Line", "Bar", "Boxplot", "Heatmap"), key="1.3")
 
-    #Data downlaoding
+    #Data downloading
     data= load_data(option, start, end)
 
     if st.sidebar.button("Enter"):
@@ -99,7 +99,7 @@ with tab3:
     #Data downloading
     data2= load_data(option2, start2, end2)
 
-#Predicted stock fro next 5 days using linear regression
+#Predicted stock for next 5 days using linear regression
 if st.sidebar.button("Show"):
     reg, testx, testy, X = trainer(data2)
     future= []
